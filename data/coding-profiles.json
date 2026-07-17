@@ -1,0 +1,9 @@
+{
+  "profiles": [
+    { "site": "LeetCode", "url": "https://leetcode.com/", "problems": 120 },
+    { "site": "GeeksforGeeks", "url": "https://auth.geeksforgeeks.org/", "problems": 200 },
+    { "site": "HackerRank", "url": "https://www.hackerrank.com/", "problems": 80 },
+    { "site": "CodeChef", "url": "https://www.codechef.com/", "problems": 40 },
+    { "site": "Codeforces", "url": "https://codeforces.com/", "problems": 25 }
+  ]
+}

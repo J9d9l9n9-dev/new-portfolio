@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ach-hackathon",
+    "title": "1st Place - HackABC",
+    "type": "Hackathon",
+    "date": "2023-11",
+    "image": "assets/achievements/ach-placeholder.svg",
+    "detail": "Built AI prototype for data analysis and won first place."
+  }
+]

@@ -1,0 +1,15 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 675'>
+  <defs>
+    <linearGradient id='g1' x1='0' x2='1'>
+      <stop offset='0' stop-color='#0ea5a4'/>
+      <stop offset='1' stop-color='#06b6d4'/>
+    </linearGradient>
+  </defs>
+  <rect width='100%' height='100%' fill='url(#g1)' rx='12'/>
+  <g fill='rgba(255,255,255,0.12)'>
+    <rect x='60' y='80' width='420' height='40' rx='8'/>
+    <rect x='60' y='140' width='300' height='18' rx='6'/>
+    <rect x='60' y='180' width='520' height='10' rx='6'/>
+  </g>
+  <text x='50%' y='60%' text-anchor='middle' fill='rgba(255,255,255,0.95)' font-family='Inter, Arial, sans-serif' font-size='44' font-weight='700'>Smart Task Manager</text>
+</svg>

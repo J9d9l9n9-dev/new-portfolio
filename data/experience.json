@@ -1,0 +1,50 @@
+[
+  {
+    "id": "edu-bsc-cs",
+    "category": "Education",
+    "title": "B.Sc. Computer Science",
+    "organization": "University Name",
+    "date": "2023 - Present",
+    "location": "City, Country",
+    "description": "Studying core computer science topics including algorithms, data structures, operating systems and AI foundations.",
+    "tech": ["Algorithms", "OS", "DBMS"],
+    "status": "Ongoing",
+    "icon": "assets/icons/timeline/edu.svg"
+  },
+  {
+    "id": "intern-xyz",
+    "category": "Internships",
+    "title": "Software Engineering Intern",
+    "organization": "Startup XYZ",
+    "date": "Summer 2024",
+    "location": "Remote",
+    "description": "Implemented new features in the frontend, improved API performance and contributed tests.",
+    "tech": ["React", "Node.js", "Postgres"],
+    "status": "Completed",
+    "icon": "assets/icons/timeline/intern.svg"
+  },
+  {
+    "id": "hackathon-abc",
+    "category": "Hackathons",
+    "title": "HackABC — 1st Place",
+    "organization": "HackABC Org",
+    "date": "2023-11",
+    "location": "City",
+    "description": "Built an AI-powered prototype to automate data analysis; focused on rapid prototyping and demo readiness.",
+    "tech": ["Python", "Flask", "ML"],
+    "status": "Completed",
+    "icon": "assets/icons/timeline/hack.svg"
+  },
+  {
+    "id": "open-source-1",
+    "category": "Open Source",
+    "title": "Contributor — Utility Library",
+    "organization": "OpenLib",
+    "date": "2024",
+    "location": "",
+    "description": "Contributed bug fixes and documentation updates to an open-source utility library.",
+    "tech": ["JavaScript"],
+    "status": "Ongoing",
+    "icon": "assets/icons/timeline/oss.svg"
+  }
+]

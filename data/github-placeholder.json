@@ -1,0 +1,16 @@
+{
+  "profile": {
+    "username": "J9d9l9n9-dev",
+    "name": "J.D.L.N.",
+    "bio": "Software Engineer • Full-Stack Developer • AI Engineer",
+    "repos": 12,
+    "followers": 42,
+    "stars": 10
+  },
+  "pinned": [
+    { "name": "awesome-app", "repo": "https://github.com/J9d9l9n9-dev/awesome-app", "desc": "Full-stack demo app", "lang": "JavaScript" }
+  ],
+  "latest": [
+    { "name": "ml-tool", "repo": "https://github.com/J9d9l9n9-dev/ml-tool", "desc": "ML utilities", "lang": "Python" }
+  ]
+}

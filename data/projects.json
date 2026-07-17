@@ -1,0 +1,38 @@
+[
+  {
+    "id": "smart-task-manager",
+    "title": "Smart Task Manager",
+    "summary": "Full-stack task manager with AI-powered prioritization and smart scheduling.",
+    "tech": ["React", "Node.js", "Express", "MongoDB", "OpenAI"],
+    "tags": ["Full-Stack", "AI", "Open Source"],
+    "repo": "https://github.com/J9d9l9n9-dev/smart-task-manager",
+    "url": "",
+    "image": "assets/projects/project-smart-task-manager.svg",
+    "featured": true,
+    "status": "Active"
+  },
+  {
+    "id": "portfolio-site",
+    "title": "Personal Portfolio",
+    "summary": "A modern, accessible portfolio site showcasing projects, skills and a developer dashboard.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "tags": ["Frontend", "Open Source"],
+    "repo": "https://github.com/J9d9l9n9-dev/portfolio",
+    "url": "",
+    "image": "assets/projects/project-portfolio-site.svg",
+    "featured": false,
+    "status": "Maintained"
+  },
+  {
+    "id": "ai-research-tool",
+    "title": "AI Research Tool",
+    "summary": "Tooling for experiments with LLM prompts, dataset evaluation and result analysis.",
+    "tech": ["Python", "Flask", "PyTorch"],
+    "tags": ["AI", "Backend"],
+    "repo": "https://github.com/J9d9l9n9-dev/ai-research-tool",
+    "url": "",
+    "image": "assets/projects/project-ai-research-tool.svg",
+    "featured": false,
+    "status": "Prototype"
+  }
+]

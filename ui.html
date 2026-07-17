@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UI System — Profile & Design System Demo</title>
+  <meta name="description" content="Accessible, responsive UI system with profile image upload, edit, crop and local persistence">
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="app-header">
+    <div class="container header-grid">
+      <div class="brand">MyApp</div>
+      <nav class="top-nav" aria-label="Primary">
+        <button id="nav-dashboard" class="nav-btn" aria-pressed="true">Dashboard</button>
+        <button id="nav-profile" class="nav-btn">Profile</button>
+      </nav>
+      <div class="header-actions">
+        <button id="auth-btn" class="button ghost">Sign in</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container main-grid" role="main">
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="User sidebar">
+      <div class="card profile-card" id="profile-card">
+        <div class="avatar-wrap">
+          <img id="avatar-img" class="avatar" alt="User profile image">
+          <button id="edit-avatar-btn" class="avatar-edit" aria-label="Edit profile image">Edit</button>
+        </div>
+        <div class="profile-meta">
+          <h3 id="user-name">Guest</h3>
+          <p id="user-email" class="muted">Not signed in</p>
+        </div>
+        <div class="card-actions">
+          <button id="upload-btn" class="button">Upload</button>
+          <button id="remove-avatar-btn" class="button secondary">Remove</button>
+        </div>
+      </div>
+
+      <nav class="side-nav" aria-label="Secondary">
+        <ul>
+          <li><a href="#" class="side-link">Overview</a></li>
+          <li><a href="#" class="side-link">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <section class="workspace" aria-live="polite">
+      <div class="card">
+        <h2>Welcome</h2>
+        <p class="lead">This demo shows an accessible, responsive UI system and a profile image workflow with upload, edit, crop and persistence.</p>
+        <div class="grid-2">
+          <form id="profile-form" class="form" novalidate>
+            <h3>Profile</h3>
+            <div class="form-row">
+              <label for="full-name">Full name</label>
+              <input id="full-name" name="fullName" type="text" required minlength="2">
+              <div class="form-error" id="fullName-error" aria-live="polite"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email-input" name="email" type="email" required>
+              <div class="form-error" id="email-error" aria-live="polite"></div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="button primary">Save profile</button>
+              <button type="button" id="signout-btn" class="button secondary">Sign out</button>
+            </div>
+            <div id="profile-status" class="form-status" aria-live="polite"></div>
+          </form>
+
+          <div class="card">
+            <h3>Account</h3>
+            <p>Authentication and persistence are simulated using localStorage for a self-contained demo. Buttons and states demonstrate micro-interactions and feedback.</p>
+            <div class="account-actions">
+              <button id="open-auth" class="button">Sign in / Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Activity</h3>
+        <p class="muted">Example content area. Interactions maintain state across sessions (local browser storage).</p>
+        <div id="activity-log" class="activity-log" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container footer-inner">
+      <p class="muted">© <span id="year"></span> MyApp — Accessible UI system demo</p>
+    </div>
+  </footer>
+
+  <!-- Hidden file input used by upload flow -->
+  <input id="file-input" type="file" accept="image/*" hidden>
+
+  <!-- Avatar edit / crop modal -->
+  <div id="avatar-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="avatar-modal-title">
+    <div class="modal-panel">
+      <header class="modal-header">
+        <h2 id="avatar-modal-title">Edit Profile Image</h2>
+        <button class="modal-close" aria-label="Close">✕</button>
+      </header>
+      <div class="modal-body">
+        <div class="crop-area">
+          <div class="crop-frame" id="crop-frame" tabindex="0" aria-label="Image crop area">
+            <img id="crop-image" alt="Image to crop">
+            <div class="crop-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <label class="control">
+            <span>Zoom</span>
+            <input id="zoom" type="range" min="1" max="3" step="0.01" value="1">
+          </label>
+          <label class="control">
+            <span>Rotate</span>
+            <input id="rotate" type="range" min="-180" max="180" step="1" value="0">
+          </label>
+          <div class="control-row">
+            <button id="crop-save" class="button primary">Save</button>
+            <button id="crop-cancel" class="button secondary">Cancel</button>
+          </div>
+          <div id="crop-status" class="form-status" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simple auth modal -->
+  <div id="auth-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="auth-title">
+    <div class="modal-panel small">
+      <header class="modal-header">
+        <h2 id="auth-title">Sign In / Register</h2>
+        <button class="modal-close" aria-label="Close">✕</button>
+      </header>
+      <div class="modal-body">
+        <form id="auth-form" class="form" novalidate>
+          <div class="form-row">
+            <label for="auth-name">Full name</label>
+            <input id="auth-name" name="name" type="text" required minlength="2">
+            <div id="auth-name-error" class="form-error" aria-live="polite"></div>
+          </div>
+          <div class="form-row">
+            <label for="auth-email">Email</label>
+            <input id="auth-email" name="email" type="email" required>
+            <div id="auth-email-error" class="form-error" aria-live="polite"></div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="button primary">Continue</button>
+          </div>
+          <div id="auth-status" class="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="ui.js" defer></script>
+</body>
+</html>

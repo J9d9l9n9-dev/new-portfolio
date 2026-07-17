@@ -1,0 +1,52 @@
+[
+  {
+    "category": "Languages",
+    "items": [
+      {"name":"Java","level":"Intermediate"},
+      {"name":"JavaScript","level":"Advanced"},
+      {"name":"Python","level":"Intermediate"},
+      {"name":"C","level":"Beginner"}
+    ]
+  },
+  {
+    "category": "Frontend",
+    "items": [
+      {"name":"HTML5","level":"Advanced"},
+      {"name":"CSS3","level":"Advanced"},
+      {"name":"Bootstrap","level":"Intermediate"},
+      {"name":"React.js","level":"Intermediate"}
+    ]
+  },
+  {
+    "category": "Backend",
+    "items": [
+      {"name":"Node.js","level":"Intermediate"},
+      {"name":"Express.js","level":"Intermediate"},
+      {"name":"REST APIs","level":"Intermediate"}
+    ]
+  },
+  {
+    "category": "Databases",
+    "items": [
+      {"name":"MySQL","level":"Intermediate"},
+      {"name":"MongoDB","level":"Intermediate"}
+    ]
+  },
+  {
+    "category": "AI & Emerging Tech",
+    "items": [
+      {"name":"Artificial Intelligence","level":"Intermediate"},
+      {"name":"Generative AI","level":"Beginner"},
+      {"name":"Prompt Engineering","level":"Beginner"}
+    ]
+  },
+  {
+    "category": "Tools",
+    "items": [
+      {"name":"Git","level":"Advanced"},
+      {"name":"GitHub","level":"Intermediate"},
+      {"name":"VS Code","level":"Advanced"},
+      {"name":"Postman","level":"Intermediate"}
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local dependencies and hosting metadata
+node_modules/
+.vercel/
+.wrangler/
+
+# Temporary validation output
+tmp/

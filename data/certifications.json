@@ -1,0 +1,11 @@
+[
+  {
+    "id": "cert-ml",
+    "title": "Machine Learning Foundations",
+    "issuer": "Online University",
+    "date": "2024-02",
+    "link": "",
+    "image": "assets/certs/cert-placeholder.svg",
+    "skills": ["ML", "Python"]
+  }
+]
