@@ -1,0 +1,348 @@
+{
+  "profile": {
+    "name": "Jampa Durga Lakshmi Narayana",
+    "shortName": "Lakshmi Narayana",
+    "initials": "JDLN",
+    "roles": [
+      "Full-Stack Developer",
+      "AI/ML Engineer",
+      "Software Engineer"
+    ],
+    "tagline": "Building practical software and AI solutions that solve real-world problems.",
+    "bio": "B.Tech Computer Science Engineering student focused on full-stack development, AI/ML, DSA, and practical software engineering. Experienced in building end-to-end applications using React, TypeScript, JavaScript, Python, FastAPI, Node.js, PostgreSQL, and modern AI/ML technologies. Interested in developing production-ready applications, participating in hackathons, and preparing for software engineering roles in product and MNC companies.",
+    "location": "Visakhapatnam, India",
+    "email": "jampadurgalakshminarayana@gmail.com",
+    "availability": "Open to internships, hackathons, research opportunities, and software development opportunities",
+    "openToWork": true,
+    "socials": {
+      "github": "https://github.com/J9d9l9n9-dev",
+      "linkedin": "https://www.linkedin.com/in/durgalakshminarayanajampa/"
+    },
+    "stats": [
+      { "label": "Featured Projects", "value": 3 },
+      { "label": "Hackathons", "value": 1 },
+      { "label": "Technologies", "value": 52 }
+    ],
+    "resumeUrl": "/resume.pdf",
+    "heroImage": "/images/hero.jpg",
+    "heroImagePosition": "center 20%"
+  },
+  "settings": {
+    "open_to_work": true,
+    "work_status_text": "Open to internships, hackathons, research opportunities, and software development opportunities",
+    "resume_url": "/resume.pdf",
+    "theme_default": "dark",
+    "contact_email": "jampadurgalakshminarayana@gmail.com"
+  },
+  "journey": [
+    {
+      "year": "2024",
+      "title": "Started Computer Science Journey",
+      "description": "Built a strong foundation in programming, Java, data structures, digital logic, and core computer science concepts.",
+      "tag": "Foundation"
+    },
+    {
+      "year": "2025",
+      "title": "Started Building Practical Projects",
+      "description": "Moved from academic programming toward practical software development, including web applications and automation projects.",
+      "tag": "Projects"
+    },
+    {
+      "year": "2025",
+      "title": "Hackathon / SIH Project Work",
+      "description": "Worked on ASHA EHR Companion, an offline-first electronic health-record solution for ASHA workers in rural India.",
+      "tag": "Hackathon"
+    },
+    {
+      "year": "2025-2026",
+      "title": "AI & Full-Stack Development",
+      "description": "Expanded into React, TypeScript, FastAPI, PostgreSQL, machine learning, computer vision, authentication, APIs, and modern AI application development.",
+      "tag": "Growth"
+    },
+    {
+      "year": "2026",
+      "title": "AI Skin Intelligence Project",
+      "description": "Developed an AI Skin Intelligence & Personalized Skincare Planner: an end-to-end AI/full-stack application with image analysis, personalization, recommendation logic, authentication, and database integration.",
+      "tag": "AI + Full-Stack"
+    },
+    {
+      "year": "2026",
+      "title": "Portfolio & Placement Preparation",
+      "description": "Building a professional developer portfolio while strengthening DSA, full-stack development, AI/ML, GitHub, resume, and placement preparation.",
+      "tag": "Placements"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming",
+      "items": [
+        { "name": "Java", "level": "Intermediate" },
+        { "name": "JavaScript / ES6+", "level": "Intermediate" },
+        { "name": "Python", "level": "Intermediate" },
+        { "name": "C", "level": "Intermediate" },
+        { "name": "TypeScript", "level": "Intermediate" },
+        { "name": "SQL", "level": "Intermediate" }
+      ]
+    },
+    {
+      "category": "Frontend",
+      "items": [
+        { "name": "HTML5", "level": "Intermediate" },
+        { "name": "CSS3", "level": "Intermediate" },
+        { "name": "React", "level": "Intermediate" },
+        { "name": "Vite", "level": "Intermediate" },
+        { "name": "Tailwind CSS", "level": "Intermediate" },
+        { "name": "Bootstrap", "level": "Intermediate" },
+        { "name": "Framer Motion", "level": "Beginner-Intermediate" },
+        { "name": "GSAP", "level": "Beginner-Intermediate" }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        { "name": "Node.js", "level": "Intermediate" },
+        { "name": "FastAPI", "level": "Intermediate" },
+        { "name": "REST APIs", "level": "Intermediate" },
+        { "name": "Fastify", "level": "Beginner-Intermediate" },
+        { "name": "JWT Authentication", "level": "Intermediate" },
+        { "name": "RBAC", "level": "Beginner-Intermediate" }
+      ]
+    },
+    {
+      "category": "Databases",
+      "items": [
+        { "name": "PostgreSQL", "level": "Intermediate" },
+        { "name": "SQLite", "level": "Intermediate" },
+        { "name": "SQLAlchemy", "level": "Intermediate" },
+        { "name": "Prisma", "level": "Beginner-Intermediate" },
+        { "name": "Drizzle ORM", "level": "Beginner-Intermediate" }
+      ]
+    },
+    {
+      "category": "AI / ML",
+      "items": [
+        { "name": "Machine Learning Fundamentals", "level": "Intermediate" },
+        { "name": "AI Application Development", "level": "Intermediate" },
+        { "name": "PyTorch", "level": "Beginner-Intermediate" },
+        { "name": "Computer Vision", "level": "Beginner-Intermediate" },
+        { "name": "EfficientNet", "level": "Beginner-Intermediate" },
+        { "name": "LLM Concepts", "level": "Beginner-Intermediate" },
+        { "name": "n8n / AI Automation", "level": "Beginner-Intermediate" },
+        { "name": "LangChain", "level": "Beginner" }
+      ]
+    },
+    {
+      "category": "CS Fundamentals",
+      "chips": [
+        "Data Structures & Algorithms",
+        "Object-Oriented Programming",
+        "DBMS",
+        "Operating Systems",
+        "Computer Networks",
+        "Computer Organization & Architecture",
+        "Digital Logic",
+        "Design & Analysis of Algorithms"
+      ]
+    },
+    {
+      "category": "Tools",
+      "chips": [
+        "Git",
+        "GitHub",
+        "VS Code",
+        "Linux",
+        "GDB",
+        "VirtualBox",
+        "Wireshark",
+        "Cisco Packet Tracer",
+        "Postman",
+        "n8n",
+        "Docker (learning)"
+      ]
+    }
+  ],
+  "currentlyLearning": [
+    "Advanced DSA",
+    "Full-stack JavaScript",
+    "System design fundamentals",
+    "AI/ML engineering",
+    "LLM application development",
+    "LangChain",
+    "n8n automation",
+    "Docker",
+    "Production-grade software engineering"
+  ],
+  "projects": [
+    {
+      "slug": "ai-skin-intelligence",
+      "title": "AI Skin Intelligence & Personalized Skincare Planner",
+      "summary": "AI-powered skincare platform that analyzes skin characteristics and generates personalized skincare routines and recommendations.",
+      "problem": "Generic skincare recommendations often fail to account for individual skin characteristics, concerns, lifestyle, environmental factors, allergies, and previous assessments.",
+      "solution": "Built an AI-powered platform that combines skin image analysis, user profiles, health/lifestyle information, ingredient intelligence, and recommendation logic to generate personalized skincare routines.",
+      "features": [
+        "AI skin assessment",
+        "Skin image upload",
+        "Webcam capture",
+        "Personalized skincare recommendations",
+        "Morning, evening, weekly, and seasonal routines",
+        "Ingredient intelligence",
+        "Ingredient suitability analysis",
+        "Interaction analysis",
+        "Allergy consideration",
+        "Health/skin scoring",
+        "JWT authentication",
+        "Role-based access control",
+        "PostgreSQL database",
+        "AI inference pipeline",
+        "React frontend",
+        "FastAPI backend"
+      ],
+      "tech": [
+        "React 18",
+        "Vite",
+        "TypeScript/JavaScript",
+        "FastAPI",
+        "Python",
+        "PyTorch",
+        "EfficientNet-B0",
+        "SQLAlchemy",
+        "Alembic",
+        "PostgreSQL",
+        "JWT",
+        "RBAC"
+      ],
+      "category": "Full-Stack + AI",
+      "status": "Production-ready with end-to-end verification completed",
+      "image": "/images/ai-skin-desktop.jpg",
+      "gallery": [
+        "/images/ai-skin-desktop.jpg",
+        "/images/ai-skin-mobile.jpg"
+      ],
+      "live": "https://ai-skin-intelligence-lakshmi-narayana-jampa.vercel.app/",
+      "repo": "https://github.com/springboardmentor23232a-eng/AI_Skin-Intelligence-Personalized-Skincare-Planner/tree/durga-laskshmi-narayana-jampa",
+      "featured": true
+    },
+    {
+      "slug": "asha-ehr-companion",
+      "title": "ASHA EHR Companion",
+      "summary": "Offline-first mobile EHR application helping ASHA workers manage patient records and healthcare visits in areas with unreliable connectivity.",
+      "problem": "Healthcare workers in rural environments may need to collect and access patient information even when reliable internet connectivity is unavailable.",
+      "solution": "Designed an offline-first mobile EHR system with local data storage and synchronization between the mobile application and backend server.",
+      "features": [
+        "Patient management",
+        "ASHA worker authentication",
+        "Patient visits",
+        "ANC records",
+        "Immunization records",
+        "Offline-first architecture",
+        "Local SQLite storage",
+        "Sync queue",
+        "Batch synchronization",
+        "Delta synchronization",
+        "Conflict logging",
+        "Server synchronization"
+      ],
+      "tech": [
+        "React Native",
+        "Expo",
+        "Node.js",
+        "Fastify",
+        "TypeScript",
+        "Drizzle ORM",
+        "Prisma",
+        "SQLite",
+        "expo-sqlite",
+        "Zustand",
+        "JWT"
+      ],
+      "category": "Mobile + Backend",
+      "status": "Built for Smart India Hackathon (SIH)",
+      "image": "",
+      "gallery": [],
+      "live": null,
+      "repo": null,
+      "featured": true
+    },
+    {
+      "slug": "developer-portfolio",
+      "title": "Full-Stack Developer Portfolio",
+      "summary": "This site: a modern full-stack portfolio with a managed backend and an owner-only admin dashboard, showcasing projects, skills, journey, and achievements.",
+      "problem": "A developer needs a professional, always-current platform to present technical capability beyond a traditional resume, and a way to update it without redeploying code.",
+      "solution": "Built a responsive React + TypeScript frontend backed by a FastAPI + PostgreSQL API, with JWT-secured owner-only admin for managing content, image uploads, and contact messages.",
+      "features": [
+        "Responsive modern UI with light/dark themes",
+        "Project case studies",
+        "Skills and career journey timeline",
+        "Contact form with spam protection",
+        "Owner-only admin dashboard (JWT, rate-limited login)",
+        "Content managed from the database",
+        "Command palette",
+        "Docker and CI pipeline",
+        "Automated backend, frontend, and E2E tests"
+      ],
+      "tech": [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "FastAPI",
+        "Python",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "Docker",
+        "JWT",
+        "Playwright",
+        "Vitest"
+      ],
+      "category": "Full-Stack",
+      "status": "Deployment planned (Phase 3)",
+      "image": "",
+      "gallery": [],
+      "live": null,
+      "repo": null,
+      "featured": true
+    }
+  ],
+  "experience": [
+    {
+      "type": "project",
+      "company": "Project Development",
+      "title": "AI / Full-Stack Project Development",
+      "role": "Student Developer / Project Developer",
+      "period": "2025-2026",
+      "points": [
+        "Developed end-to-end AI and full-stack applications using React, FastAPI, PostgreSQL, and PyTorch.",
+        "Implemented authentication, database models, APIs, image-processing pipelines, and personalized recommendation logic.",
+        "Worked on production-oriented architecture, testing, debugging, and mentor/audit requirements."
+      ]
+    },
+    {
+      "type": "project",
+      "company": "SIH / Smart India Hackathon",
+      "title": "Hackathon / SIH Project Development: ASHA EHR Companion",
+      "role": "Developer / Project Team Member",
+      "period": "2025",
+      "points": [
+        "Worked on an offline-first healthcare application for ASHA workers.",
+        "Designed patient, visit, immunization, ANC, synchronization, and conflict-management workflows.",
+        "Implemented mobile/backend architecture using React Native, Expo, Node.js, Fastify, SQLite, and synchronization mechanisms."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "GITAM University, Visakhapatnam",
+      "degree": "Bachelor of Technology, Computer Science Engineering",
+      "period": "2024 - 2028"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Smart India Hackathon (SIH)",
+      "description": "Worked on the ASHA EHR Companion problem, developing an offline-first healthcare solution targeting rural healthcare workflows.",
+      "url": null
+    }
+  ],
+  "certifications": [],
+  "testimonials": []
+}
