@@ -120,7 +120,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <HeroSection profile={profile} siteSettings={siteSettings} />
+      <HeroSection profile={profile} siteSettings={siteSettings} projects={projects} />
       <div className="section-divider" />
       <AboutSection profile={profile} />
       <div className="section-divider" />

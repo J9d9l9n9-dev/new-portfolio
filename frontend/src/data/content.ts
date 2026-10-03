@@ -48,6 +48,7 @@ export interface PortfolioContent {
     github: string;
     linkedin: string;
     twitter: string;
+    leetcode?: string;
   };
   stats: StatItem[];
   skills: {
@@ -61,16 +62,21 @@ export interface PortfolioContent {
 
 export const content: PortfolioContent = {
   name: "Jampa Durga Lakshmi Narayana",
-  role: ["Computer Science Undergraduate", "Full-Stack Developer", "Software Engineer & AI Enthusiast"],
-  tagline: "Computer Science Undergraduate at GITAM passionate about Full-Stack Development, Scalable Software, and AI-Driven Applications.",
-  bio: "Computer Science undergraduate at GITAM Deemed to be University with a strong foundation in Data Structures & Algorithms, Object-Oriented Programming, Software Engineering, and Full-Stack Web Development. Passionate about building scalable software solutions and integrating Artificial Intelligence into real-world applications. Seeking Software Engineer or Full-Stack Developer opportunities to contribute to innovative products and continuously expand expertise in AI-driven software development.",
+  role: [
+    "Full-Stack Developer",
+    "AI Software Engineer",
+    "Computer Science Undergraduate"
+  ],
+  tagline: "Building practical full-stack applications, robust backend APIs, and AI-powered software systems.",
+  bio: "Computer Science undergraduate at GITAM Deemed to be University with a strong foundation in Data Structures & Algorithms, Object-Oriented Programming, and Full-Stack Engineering. Passionate about building practical software systems, backend APIs, and integrating Artificial Intelligence into real-world applications.",
   location: "Visakhapatnam, Andhra Pradesh, India",
   email: "jampadurgalakshminarayana@gmail.com",
   resumeUrl: "/resume.pdf",
   socials: {
-    github: "https://github.com/jampadurgalakshminarayana",
-    linkedin: "https://linkedin.com/in/jampadurgalakshminarayana",
+    github: "https://github.com/J9d9l9n9-dev",
+    linkedin: "https://www.linkedin.com/in/durgalakshminarayanajampa/",
     twitter: "",
+    leetcode: "https://leetcode.com/u/J9d9l9n9/",
   },
   stats: [
     { label: "B.Tech CGPA", value: "8.17/10" },
@@ -79,12 +85,12 @@ export const content: PortfolioContent = {
     { label: "Graduation", value: 2028 },
   ],
   skills: {
-    "Languages": ["Java", "Python", "JavaScript", "C"],
-    "Frontend": ["React.js", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS"],
-    "Backend": ["Node.js", "Express.js", "REST APIs", "JDBC"],
-    "Databases": ["MySQL", "MongoDB"],
-    "Core CS": ["Data Structures & Algorithms", "OOP", "DBMS", "Operating Systems", "Computer Networks"],
-    "AI & Tools": ["Generative AI", "Prompt Engineering", "Git", "GitHub", "VS Code"],
+    "Languages": ["Java", "Python", "JavaScript", "TypeScript", "C", "SQL"],
+    "Frontend": ["React", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Vite"],
+    "Backend": ["FastAPI", "Node.js", "REST APIs", "Fastify", "JWT"],
+    "Databases": ["PostgreSQL", "SQLite", "SQLAlchemy", "MySQL"],
+    "AI & ML": ["PyTorch", "EfficientNet", "Computer Vision", "LangChain", "Machine Learning"],
+    "Tools & DevOps": ["Git", "GitHub", "Linux", "Docker", "Postman", "VS Code"],
   },
   experience: [
     {
@@ -92,10 +98,10 @@ export const content: PortfolioContent = {
       title: "Software Developer & Technical Community Member",
       period: "2024 - Present",
       points: [
-        "Engineered database-driven applications including a Java JDBC Student Management System and modern web apps.",
+        "Engineered database-driven applications including Java JDBC and modern FastAPI/React full-stack architectures.",
         "Solved 100+ Data Structures & Algorithms problems across coding platforms focusing on arrays, strings, and OOP design.",
-        "Actively participated in collegiate hackathons, collaborating to build software applications under tight time constraints.",
-        "Consistently expanding expertise in Full-Stack Web Development, modern JavaScript/React, and Generative AI technologies.",
+        "Collaborated in hackathons developing practical solutions such as rural healthcare synchronization engines.",
+        "Consistently expanding expertise in Full-Stack Web Development, modern TypeScript, and Applied AI/PyTorch systems.",
       ],
     },
   ],
@@ -103,7 +109,7 @@ export const content: PortfolioContent = {
     {
       school: "GITAM Deemed to be University, Visakhapatnam",
       degree: "B.Tech in Computer Science and Engineering (CGPA: 8.17/10)",
-      period: "2024 - 2028 (Expected)",
+      period: "2024 - 2028",
     },
     {
       school: "Sasi Junior College, Mandapeta",
@@ -113,48 +119,49 @@ export const content: PortfolioContent = {
   ],
   projects: [
     {
-      title: "Student Management System",
-      description: "Java-based CRUD application for managing student academic records, grades, and enrollments with MySQL database integration using JDBC.",
-      tech: ["Java", "MySQL", "JDBC", "OOP"],
-      image: "/images/project-planner.jpg",
-      live: "https://github.com/jampadurgalakshminarayana",
-      repo: "https://github.com/jampadurgalakshminarayana/student-management-system",
+      title: "AI Skin Intelligence & Personalized Skincare Planner",
+      description: "Computer vision and deep learning diagnostic system utilizing PyTorch EfficientNet-B0 to analyze facial skin conditions and generate personalized routines.",
+      tech: ["React", "FastAPI", "Python", "PyTorch", "EfficientNet-B0", "PostgreSQL", "SQLAlchemy", "JWT"],
+      image: "/images/ai-skin-desktop.jpg",
+      live: "https://ai-skin-intelligence-lakshmi-narayana-jampa.vercel.app/",
+      repo: "https://github.com/springboardmentor23232a-eng/AI_Skin-Intelligence-Personalized-Skincare-Planner/tree/durga-laskshmi-narayana-jampa",
       category: "Full-Stack",
-      longDescription: "An Object-Oriented Java application utilizing JDBC drivers to execute transactional CRUD operations with parameterized queries against a normalized MySQL relational schema.",
+      longDescription: "A full-stack diagnostic system combining deep learning computer vision with a FastAPI backend to assess facial skin conditions and curate allergy-safe routines.",
       keyFeatures: [
-        "Transactional CRUD operations for student records and profile attributes",
-        "Optimized JDBC connection management and parameterized SQL queries to prevent injection",
-        "Structured relational schema in MySQL with validation constraints and rollback capability",
+        "PyTorch EfficientNet-B0 inference engine evaluating acne, dryness, and pigmentation",
+        "Personalized morning, evening, weekly, and seasonal routine generation engine",
+        "Ingredient intelligence algorithm screening contraindications and allergens",
+        "Role-based access control and JWT authentication securing clinical data",
       ],
     },
     {
-      title: "Modern Full-Stack Personal Portfolio",
-      description: "High-performance, responsive portfolio platform engineered with React.js, modern CSS, dynamic case studies, and interactive sections.",
-      tech: ["React.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"],
-      image: "/images/project-metrics.jpg",
-      live: "https://github.com/jampadurgalakshminarayana",
-      repo: "https://github.com/jampadurgalakshminarayana/portfolio",
-      category: "Frontend",
-      longDescription: "A fully responsive web application showcasing technical competencies, projects, certifications, and contact persistence with dark/light themes.",
+      title: "ASHA EHR Companion",
+      description: "Offline-first electronic health record system designed for rural healthcare workers with deterministic background conflict sync.",
+      tech: ["React Native", "Expo", "Fastify", "Node.js", "SQLite", "Sync Engine"],
+      image: "/images/project-vision.jpg",
+      live: "",
+      repo: "",
+      category: "Backend",
+      longDescription: "Engineered for rural community healthcare workers operating in zero-connectivity regions, featuring local SQLite caching and background synchronization.",
       keyFeatures: [
-        "Responsive design with dark/light visual theme persistence and smooth scrolling",
-        "Interactive case-study views detailing problems, architecture, and technology stacks",
-        "Contact form validation, anti-spam protection, and administrative inbox management",
+        "Offline-first client architecture persisting maternal, immunization, and visit records locally",
+        "Deterministic conflict resolution engine syncing data on network reconnection",
+        "High-throughput Fastify Node.js synchronization endpoints",
       ],
     },
     {
-      title: "Interactive Task Management Web Application",
-      description: "Responsive task management application with task creation, editing, deletion, filtering, and completion tracking using dynamic DOM manipulation.",
-      tech: ["JavaScript", "HTML5", "CSS3", "DOM API"],
-      image: "/images/project-weather.jpg",
-      live: "https://github.com/jampadurgalakshminarayana",
-      repo: "https://github.com/jampadurgalakshminarayana/todo-list-app",
-      category: "Frontend",
-      longDescription: "A lightweight, responsive web application featuring real-time DOM manipulation, task priority tags, and browser local storage persistence.",
+      title: "Full-Stack Developer Portfolio",
+      description: "Production-ready personal portfolio application engineered with React 19, TypeScript, Tailwind CSS v4, and a FastAPI backend with owner CMS.",
+      tech: ["React 19", "TypeScript", "Tailwind CSS v4", "FastAPI", "SQLAlchemy", "JWT", "Docker"],
+      image: "/images/projects/developer-portfolio/hero.png",
+      live: "",
+      repo: "https://github.com/J9d9l9n9-dev/portfolio",
+      category: "Full-Stack",
+      longDescription: "A high-performance full-stack web application showcasing engineering capabilities, featuring authenticated admin management, rate-limited inquiries, and automated tests.",
       keyFeatures: [
-        "Dynamic task addition, in-place editing, deletion, and completion toggles",
-        "Filter tasks by active, completed, or prioritized states with instant DOM updates",
-        "Local storage synchronization for persistent task history between sessions",
+        "Resilient offline fallback layer ensuring 100% uptime when backend is offline",
+        "Owner administrative CMS with JWT authentication and file upload validations",
+        "IP-based rate limiting and honeypot protection on contact inquiries",
       ],
     },
   ],

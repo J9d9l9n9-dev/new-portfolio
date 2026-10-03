@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import List, Optional, Dict, Any
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field, ConfigDict
 
 # Profile Schemas
 class ProfileBase(BaseModel):
@@ -43,8 +43,7 @@ class ProfileOut(ProfileBase):
     id: int
     updated_at: Optional[datetime] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Site Settings Schemas
 class SiteSettingsBase(BaseModel):
@@ -65,8 +64,7 @@ class SiteSettingsOut(SiteSettingsBase):
     id: int
     updated_at: Optional[datetime] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Social Link Schemas
 class SocialLinkBase(BaseModel):
@@ -89,8 +87,7 @@ class SocialLinkUpdate(BaseModel):
 class SocialLinkOut(SocialLinkBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Skills Schemas
 class SkillBase(BaseModel):
@@ -113,8 +110,7 @@ class SkillUpdate(BaseModel):
 class SkillOut(SkillBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Learning Item Schemas
 class LearningItemBase(BaseModel):
@@ -137,8 +133,7 @@ class LearningItemUpdate(BaseModel):
 class LearningItemOut(LearningItemBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Journey Milestone Schemas
 class JourneyMilestoneBase(BaseModel):
@@ -163,8 +158,7 @@ class JourneyMilestoneUpdate(BaseModel):
 class JourneyMilestoneOut(JourneyMilestoneBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Experience Schemas
 class ExperienceBase(BaseModel):
@@ -193,8 +187,7 @@ class ExperienceUpdate(BaseModel):
 class ExperienceOut(ExperienceBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Education Schemas
 class EducationBase(BaseModel):
@@ -217,8 +210,7 @@ class EducationUpdate(BaseModel):
 class EducationOut(EducationBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Project Schemas
 class ProjectBase(BaseModel):
@@ -267,8 +259,7 @@ class ProjectUpdate(BaseModel):
 class ProjectOut(ProjectBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Certification Schemas
 class CertificationBase(BaseModel):
@@ -295,8 +286,7 @@ class CertificationUpdate(BaseModel):
 class CertificationOut(CertificationBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Achievement Schemas
 class AchievementBase(BaseModel):
@@ -325,8 +315,7 @@ class AchievementUpdate(BaseModel):
 class AchievementOut(AchievementBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Contact Message Schemas
 class ContactMessageCreate(BaseModel):
@@ -346,8 +335,7 @@ class ContactMessageOut(BaseModel):
     is_read: bool
     is_handled: bool
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Auth Schemas
 class Token(BaseModel):

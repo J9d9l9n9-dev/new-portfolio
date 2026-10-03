@@ -108,13 +108,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ projects = [], r
       action: () => scrollToSection('projects'),
     },
     {
-      id: 'nav-certifications',
-      title: 'Certifications & Credentials',
-      category: 'Navigation',
-      icon: <Briefcase className="w-4 h-4 text-secondary" />,
-      action: () => scrollToSection('certifications'),
-    },
-    {
       id: 'nav-achievements',
       title: 'Achievements & Hackathons',
       category: 'Navigation',

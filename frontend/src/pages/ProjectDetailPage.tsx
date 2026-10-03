@@ -94,11 +94,9 @@ export const ProjectDetailPage: React.FC = () => {
   const nextProject = currentIndex >= 0 && currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : allProjects[0];
 
   // Screenshots gallery
-  const gallery = [
-    project.image || '/images/project-planner.jpg',
-    '/images/project-metrics.jpg',
-    '/images/project-weather.jpg',
-  ];
+  const gallery = project.gallery && project.gallery.length > 0
+    ? project.gallery
+    : [project.image || '/images/ai-skin-desktop.jpg'];
 
   return (
     <article className="py-28 px-4 sm:px-6 lg:px-8 max-w-content mx-auto min-h-screen">
@@ -197,15 +195,30 @@ export const ProjectDetailPage: React.FC = () => {
             </p>
           </section>
 
-          {/* Solution & Architecture */}
+          {/* Solution Design */}
           <section className="p-7 rounded-3xl bg-bg-card border border-border">
             <h2 className="font-display font-bold text-xl sm:text-2xl text-text-primary mb-3">
-              Architecture & Solution Design
+              Solution Design & Implementation
             </h2>
             <p className="text-text-secondary leading-relaxed text-sm sm:text-base">
               {project.solution}
             </p>
           </section>
+
+          {/* Technical Architecture (when provided) */}
+          {project.architecture && (
+            <section className="p-7 rounded-3xl bg-bg-card border border-border">
+              <div className="flex items-center gap-2 mb-3">
+                <Terminal className="w-5 h-5 text-primary" />
+                <h2 className="font-display font-bold text-xl sm:text-2xl text-text-primary">
+                  System Architecture & Stack Integration
+                </h2>
+              </div>
+              <p className="text-text-secondary leading-relaxed text-sm sm:text-base">
+                {project.architecture}
+              </p>
+            </section>
+          )}
 
           {/* Core System Features */}
           {project.features && project.features.length > 0 && (
@@ -226,6 +239,18 @@ export const ProjectDetailPage: React.FC = () => {
                   </div>
                 ))}
               </div>
+            </section>
+          )}
+
+          {/* Key Challenges & Learnings (when provided) */}
+          {project.learnings && (
+            <section className="p-7 rounded-3xl bg-bg-card border border-border">
+              <h2 className="font-display font-bold text-xl sm:text-2xl text-text-primary mb-3">
+                Key Engineering Learnings & Insights
+              </h2>
+              <p className="text-text-secondary leading-relaxed text-sm sm:text-base">
+                {project.learnings}
+              </p>
             </section>
           )}
 

@@ -15,7 +15,6 @@ const NAV_ITEMS = [
   { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Certifications', href: '#certifications' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -37,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({ profile, onOpenCommandPalette })
       setScrollProgress(totalScroll > 0 ? (currentScroll / totalScroll) * 100 : 0);
 
       if (isHome) {
-        const sections = ['hero', 'about', 'journey', 'skills', 'experience', 'projects', 'certifications', 'contact'];
+        const sections = ['hero', 'about', 'journey', 'skills', 'experience', 'projects', 'contact'];
         for (const s of sections) {
           const el = document.getElementById(s);
           if (el) {
@@ -188,7 +187,7 @@ export const Navbar: React.FC<NavbarProps> = ({ profile, onOpenCommandPalette })
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
-          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-md md:hidden flex justify-end animate-in fade-in"
+          className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-md md:hidden flex justify-end animate-in fade-in"
           onClick={() => setMobileMenuOpen(false)}
         >
           <div

@@ -4,13 +4,13 @@ def main():
     print("Testing live Frontend and Backend integration...")
 
     # 1. Frontend routes
-    for route in ['/', '/projects/student-management-system', '/admin', '/images/hero.jpg']:
+    for route in ['/', '/projects/developer-portfolio', '/admin', '/images/hero.jpg']:
         r = httpx.get(f"http://localhost:5173{route}", timeout=3)
         assert r.status_code == 200, f"Route {route} failed with {r.status_code}"
         print(f"[OK] Frontend route {route} -> 200")
 
     # 2. Backend endpoints
-    for endpoint in ['/profile', '/projects', '/projects/student-management-system', '/skills', '/experience', '/education']:
+    for endpoint in ['/profile', '/projects', '/projects/developer-portfolio', '/skills', '/experience', '/education']:
         r = httpx.get(f"http://localhost:8000/api/v1{endpoint}", timeout=3)
         assert r.status_code == 200, f"Endpoint {endpoint} failed with {r.status_code}"
         print(f"[OK] Backend endpoint /api/v1{endpoint} -> 200")

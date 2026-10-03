@@ -4,15 +4,15 @@ import type {
   JourneyMilestone, Certification, Achievement, LearningItem
 } from '../types';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
+const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '/api/v1' : 'http://localhost:8000/api/v1');
 
-// Single source of truth dummy fallback
+// Resilient offline fallback data layer
 export const FALLBACK_PROFILE: Profile = {
   name: "Jampa Durga Lakshmi Narayana",
   role: [
-    "Computer Science Undergraduate",
     "Full-Stack Developer",
-    "Software Engineer & AI Enthusiast"
+    "AI Software Engineer",
+    "Computer Science Undergraduate"
   ],
   tagline: "Computer Science Undergraduate at GITAM passionate about Full-Stack Development, Scalable Software, and AI-Driven Applications.",
   bio: "Computer Science undergraduate at GITAM Deemed to be University with a strong foundation in Data Structures & Algorithms, Object-Oriented Programming, Software Engineering, and Full-Stack Web Development. Passionate about building scalable software solutions and integrating Artificial Intelligence into real-world applications. Seeking Software Engineer or Full-Stack Developer opportunities to contribute to innovative products and continuously expand expertise in AI-driven software development.",
@@ -21,23 +21,23 @@ export const FALLBACK_PROFILE: Profile = {
   resumeUrl: "/resume.pdf",
   heroImage: "/images/hero.jpg",
   heroImagePosition: "center 20%",
-  availability: "Actively seeking Software Engineer & Full-Stack Developer Internships (Expected Graduation: 2028)",
+  availability: "Available for Internships & Full-Stack Roles",
   socials: {
-    github: "https://github.com/jampadurgalakshminarayana",
-    linkedin: "https://linkedin.com/in/jampadurgalakshminarayana",
+    github: "https://github.com/J9d9l9n9-dev",
+    linkedin: "https://www.linkedin.com/in/durgalakshminarayanajampa/",
     twitter: "",
-    leetcode: "https://leetcode.com/jampadurgalakshminarayana"
+    leetcode: "https://leetcode.com/u/J9d9l9n9/"
   },
   stats: [
-    { label: "Projects Built", value: 3 },
-    { label: "DSA Solved", value: 100 },
-    { label: "Graduation", value: 2028 }
+    { label: "Featured Projects", value: 3 },
+    { label: "SIH Hackathon", value: 1 },
+    { label: "DSA Solved", value: 100 }
   ]
 };
 
 export const FALLBACK_SITE_SETTINGS: SiteSettings = {
   open_to_work: true,
-  work_status_text: "Open to Software Engineering & Full-Stack Opportunities",
+  work_status_text: "Available for Internships & Full-Stack Roles",
   resume_url: "/resume.pdf",
   theme_default: "dark",
   contact_email: "jampadurgalakshminarayana@gmail.com"
@@ -45,64 +45,76 @@ export const FALLBACK_SITE_SETTINGS: SiteSettings = {
 
 export const FALLBACK_SKILLS: SkillCategory[] = [
   {
-    category: "Programming Languages",
+    category: "Programming",
     items: [
-      { name: "Java", level: 85, logo: "java" },
-      { name: "Python", level: 82, logo: "python" },
-      { name: "JavaScript", level: 85, logo: "javascript" },
-      { name: "C", level: 80, logo: "c" }
+      { name: "Java", level: "Intermediate", logo: "java" },
+      { name: "JavaScript", level: "Intermediate", logo: "javascript" },
+      { name: "TypeScript", level: "Intermediate", logo: "typescript" },
+      { name: "Python", level: "Intermediate", logo: "python" },
+      { name: "C", level: "Intermediate", logo: "c" },
+      { name: "SQL", level: "Intermediate", logo: "sql" },
     ],
     order: 1
   },
   {
-    category: "Frontend Development",
+    category: "Frontend",
     items: [
-      { name: "React.js", level: 84, logo: "react" },
-      { name: "HTML5", level: 92, logo: "html5" },
-      { name: "CSS3", level: 88, logo: "css3" },
-      { name: "Bootstrap", level: 82, logo: "bootstrap" },
-      { name: "Tailwind CSS", level: 85, logo: "tailwind" }
+      { name: "React", level: "Intermediate", logo: "react" },
+      { name: "HTML5", level: "Intermediate", logo: "html5" },
+      { name: "CSS3", level: "Intermediate", logo: "css3" },
+      { name: "Tailwind CSS", level: "Intermediate", logo: "tailwind" },
+      { name: "Bootstrap", level: "Intermediate", logo: "bootstrap" },
+      { name: "Vite", level: "Intermediate", logo: "vite" },
     ],
     order: 2
   },
   {
-    category: "Backend & APIs",
+    category: "Backend",
     items: [
-      { name: "Node.js", level: 80, logo: "nodejs" },
-      { name: "Express.js", level: 80, logo: "express" },
-      { name: "REST APIs", level: 85, logo: "api" },
-      { name: "JDBC", level: 82, logo: "database" }
+      { name: "Node.js", level: "Intermediate", logo: "nodejs" },
+      { name: "FastAPI", level: "Intermediate", logo: "fastapi" },
+      { name: "Fastify", level: "Beginner-Intermediate", logo: "fastify" },
+      { name: "REST APIs", level: "Intermediate", logo: "api" },
+      { name: "JWT", level: "Intermediate", logo: "jwt" },
+      { name: "RBAC", level: "Beginner-Intermediate", logo: "rbac" },
     ],
     order: 3
   },
   {
-    category: "Databases & Storage",
+    category: "Databases",
     items: [
-      { name: "MySQL", level: 85, logo: "mysql" },
-      { name: "MongoDB", level: 78, logo: "mongodb" }
+      { name: "PostgreSQL", level: "Intermediate", logo: "postgresql" },
+      { name: "SQLite", level: "Intermediate", logo: "sqlite" },
+      { name: "SQLAlchemy", level: "Intermediate", logo: "sqlalchemy" },
+      { name: "Prisma", level: "Beginner-Intermediate", logo: "prisma" },
+      { name: "Drizzle", level: "Beginner-Intermediate", logo: "drizzle" },
     ],
     order: 4
   },
   {
-    category: "Core Computer Science",
+    category: "AI / ML",
     items: [
-      { name: "Data Structures & Algorithms", level: 84, logo: "dsa" },
-      { name: "Object-Oriented Programming (OOP)", level: 88, logo: "oop" },
-      { name: "Database Management (DBMS)", level: 85, logo: "dbms" },
-      { name: "Operating Systems", level: 80, logo: "os" },
-      { name: "Computer Networks", level: 80, logo: "network" }
+      { name: "Machine Learning", level: "Intermediate", logo: "ml" },
+      { name: "PyTorch", level: "Beginner-Intermediate", logo: "pytorch" },
+      { name: "Computer Vision", level: "Beginner-Intermediate", logo: "cv" },
+      { name: "EfficientNet", level: "Beginner-Intermediate", logo: "efficientnet" },
+      { name: "LLM Applications", level: "Beginner-Intermediate", logo: "llm" },
+      { name: "LangChain", level: "Beginner", logo: "langchain" },
+      { name: "AI Workflows", level: "Beginner-Intermediate", logo: "ai" },
     ],
     order: 5
   },
   {
-    category: "AI & Developer Tools",
-    items: [
-      { name: "Generative AI", level: 82, logo: "ai" },
-      { name: "Prompt Engineering", level: 85, logo: "prompt" },
-      { name: "AI-Assisted Development", level: 84, logo: "ai-dev" },
-      { name: "Git", level: 85, logo: "git" },
-      { name: "GitHub", level: 88, logo: "github" },
-      { name: "VS Code", level: 90, logo: "vscode" }
+    category: "Tools & DevOps",
+    chips: [
+      "Git",
+      "GitHub",
+      "Linux",
+      "Docker",
+      "Postman",
+      "Wireshark",
+      "n8n",
+      "VS Code"
     ],
     order: 6
   }
@@ -145,48 +157,7 @@ export const FALLBACK_JOURNEY: JourneyMilestone[] = [
   }
 ];
 
-export const FALLBACK_CERTIFICATIONS: Certification[] = [
-  {
-    id: 1,
-    title: "Java Programming Fundamentals",
-    issuer: "Professional Certification",
-    date: "2024",
-    credential_url: "https://github.com/jampadurgalakshminarayana",
-    badge_image: "/images/cert-aws.svg"
-  },
-  {
-    id: 2,
-    title: "Data Structures & Algorithms",
-    issuer: "Computer Science Domain",
-    date: "2025",
-    credential_url: "https://github.com/jampadurgalakshminarayana",
-    badge_image: "/images/cert-pg.svg"
-  },
-  {
-    id: 3,
-    title: "Web Development Fundamentals",
-    issuer: "Full-Stack Web Domain",
-    date: "2024",
-    credential_url: "https://github.com/jampadurgalakshminarayana",
-    badge_image: "/images/cert-dl.svg"
-  },
-  {
-    id: 4,
-    title: "Git & GitHub Essentials",
-    issuer: "DevOps & Version Control",
-    date: "2024",
-    credential_url: "https://github.com/jampadurgalakshminarayana",
-    badge_image: "/images/cert-aws.svg"
-  },
-  {
-    id: 5,
-    title: "Artificial Intelligence Fundamentals",
-    issuer: "AI & Emerging Technologies",
-    date: "2025",
-    credential_url: "https://github.com/jampadurgalakshminarayana",
-    badge_image: "/images/cert-dl.svg"
-  }
-];
+export const FALLBACK_CERTIFICATIONS: Certification[] = [];
 
 export const FALLBACK_ACHIEVEMENTS: Achievement[] = [
   {
@@ -195,25 +166,25 @@ export const FALLBACK_ACHIEVEMENTS: Achievement[] = [
     organization: "Coding Platforms (LeetCode / GeeksforGeeks)",
     description: "Solved 100+ Data Structures & Algorithms problems on coding platforms, building a strong foundation in algorithmic analysis and optimization.",
     date: "2024 - Present",
-    url: "https://leetcode.com/jampadurgalakshminarayana",
+    url: "https://leetcode.com/u/J9d9l9n9/",
     badge: "100+ Solved"
   },
   {
     id: 2,
     title: "Hackathon Participation & Project Building",
     organization: "Engineering Technical Communities",
-    description: "Participated in collegiate hackathons and continuously build software development projects collaborating in team sprints.",
+    description: "Participated in collegiate hackathons (including Smart India Hackathon internal rounds) and continuously build software applications collaborating in team sprints.",
     date: "2024 - 2025",
-    url: "https://github.com/jampadurgalakshminarayana",
+    url: "https://github.com/J9d9l9n9-dev",
     badge: "Hackathon Builder"
   },
   {
     id: 3,
     title: "Continuous Skill Expansion in Full-Stack & AI",
     organization: "Technical Exploration",
-    description: "Consistently expanding technical depth across modern Full-Stack Web Development, React, Node.js, and Generative AI technologies.",
+    description: "Consistently expanding technical depth across modern Full-Stack Web Development, React, FastAPI, PostgreSQL, and Applied AI/PyTorch systems.",
     date: "2025",
-    url: "https://github.com/jampadurgalakshminarayana",
+    url: "https://github.com/J9d9l9n9-dev",
     badge: "Continuous Learner"
   }
 ];
@@ -225,7 +196,7 @@ export const FALLBACK_EXPERIENCE: Experience[] = [
     title: "Software Developer & Technical Community Member",
     period: "2024 - Present",
     points: [
-      "Engineered database-driven applications including a Java JDBC Student Management System and modern web apps.",
+      "Engineered database-driven applications including high-performance REST APIs and modern web apps.",
       "Solved 100+ Data Structures & Algorithms problems across coding platforms focusing on arrays, strings, and OOP design.",
       "Actively participated in collegiate hackathons, collaborating to build software applications under tight time constraints.",
       "Consistently expanding expertise in Full-Stack Web Development, modern JavaScript/React, and Generative AI technologies."
@@ -251,81 +222,77 @@ export const FALLBACK_EDUCATION: Education[] = [
 export const FALLBACK_PROJECTS: Project[] = [
   {
     id: 1,
-    slug: "student-management-system",
-    title: "Student Management System",
-    summary: "Java-based CRUD application for managing student academic records, grades, and enrollments with MySQL database integration using JDBC.",
-    problem: "Academic administrations require secure, structured, and persistent software tools to manage student enrollments, record updates, and academic progress without data corruption.",
-    solution: "Designed and developed an Object-Oriented Java application utilizing JDBC drivers to execute transactional CRUD operations with parameterized queries against a normalized MySQL relational schema.",
+    slug: "ai-skin-intelligence",
+    title: "AI Skin Intelligence & Personalized Skincare Planner",
+    summary: "AI-powered skincare platform analyzing skin characteristics and generating personalized daily routines and ingredient recommendations.",
+    problem: "Generic skincare recommendations often fail to account for individual skin characteristics, concerns, lifestyle, environmental factors, allergies, and previous assessments.",
+    solution: "Built an AI-powered platform that combines skin image analysis, user profiles, health/lifestyle information, ingredient intelligence, and recommendation logic to generate personalized skincare routines.",
+    architecture: "Dual-tier decoupled architecture: React 18 client communicating with a high-performance FastAPI backend. Image inference pipeline leverages PyTorch with an EfficientNet-B0 backbone for skin feature classification, coupled with SQLAlchemy 2.0 ORM, PostgreSQL persistence, and JWT-authenticated session control.",
+    learnings: "Implemented computer vision inference pipelines in production, managed ML model weight loading in ASGI lifespans, designed structured relational schemas with Alembic migrations, and enforced fine-grained RBAC authorization.",
     features: [
-      "Transactional CRUD operations for student records and profile attributes",
-      "Optimized JDBC connection management and parameterized SQL queries to prevent injection",
-      "Structured relational schema in MySQL with validation constraints and rollback capability",
-      "Intuitive interface for rapid student record search, grade updates, and reporting"
+      "AI skin assessment with webcam capture & image upload",
+      "Personalized morning, evening, weekly, and seasonal routines",
+      "Ingredient intelligence & allergen conflict analysis",
+      "Skin health scoring metrics",
+      "JWT authentication with role-based access control (RBAC)",
+      "High-speed FastAPI REST API & PostgreSQL database"
     ],
-    architecture: "Layered architectural pattern separating UI presentation, Business Service Logic, and Data Access Object (DAO) layers with JDBC driver abstraction connecting to MySQL Server.",
-    learnings: "Gained deep hands-on expertise with database transactions, JDBC connection lifecycles, SQL constraint management, and Object-Relational mapping in Java.",
-    tech: ["Java", "MySQL", "JDBC", "OOP"],
-    category: "Full-Stack",
-    image: "/images/project-planner.jpg",
-    gallery: [
-      "/images/project-planner.jpg",
-      "/images/project-metrics.jpg"
-    ],
-    live: "https://github.com/jampadurgalakshminarayana",
-    repo: "https://github.com/jampadurgalakshminarayana/student-management-system",
-    featured: true
+    tech: ["React 18", "Vite", "TypeScript", "FastAPI", "Python", "PyTorch", "EfficientNet-B0", "SQLAlchemy", "PostgreSQL", "JWT"],
+    category: "Full-Stack + AI",
+    image: "/images/ai-skin-desktop.jpg",
+    gallery: ["/images/ai-skin-desktop.jpg", "/images/ai-skin-mobile.jpg"],
+    live: "https://ai-skin-intelligence-lakshmi-narayana-jampa.vercel.app/",
+    repo: "https://github.com/springboardmentor23232a-eng/AI_Skin-Intelligence-Personalized-Skincare-Planner/tree/durga-laskshmi-narayana-jampa",
+    featured: true,
   },
   {
     id: 2,
-    slug: "personal-portfolio-website",
-    title: "Modern Full-Stack Personal Portfolio",
-    summary: "High-performance, responsive portfolio platform engineered with React.js, modern CSS, dynamic case studies, and interactive sections.",
-    problem: "Standard static resumes lack dynamic proof of skills, real-time interactivity, and the ability to showcase architectural case studies effectively.",
-    solution: "Designed and developed a fully responsive web application showcasing technical competencies, projects, certifications, and contact persistence.",
+    slug: "asha-ehr-companion",
+    title: "ASHA EHR Companion",
+    summary: "Offline-first mobile EHR application helping rural healthcare workers manage patient records and health visits with bidirectional sync.",
+    problem: "Healthcare workers in rural environments need to collect and access patient records reliably even in areas with zero or intermittent internet connectivity.",
+    solution: "Designed an offline-first mobile EHR system with local device storage and intelligent delta synchronization between the mobile app and backend server.",
+    architecture: "Offline-first mobile architecture utilizing React Native (Expo) and local SQLite storage on device. Employs a bidirectional synchronization engine with Fastify backend, executing queued batch payloads, delta reconciliations, and timestamp conflict-resolution protocols.",
+    learnings: "Deepened understanding of offline-first mobile state synchronization, network intermittent resilience, transactional SQLite migrations, and designing low-latency healthcare workflows for rural health workers.",
     features: [
-      "Responsive design with dark/light visual theme persistence and smooth scrolling",
-      "Interactive case-study views detailing problems, architecture, and technology stacks",
-      "Contact form validation, anti-spam protection, and administrative inbox management",
-      "Command palette (Ctrl+K) for instant keyboard navigation across all sections"
+      "Offline-first patient profile and visit record management",
+      "ANC (Antenatal Care) and immunization tracking",
+      "Local SQLite persistence on mobile client",
+      "Sync queue with automatic batch and delta synchronization",
+      "Conflict logging and server reconciliation"
     ],
-    architecture: "Single Page Application powered by React 19, TypeScript, and Tailwind CSS with client-side routing, TanStack Query caching, and FastAPI backend integration.",
-    learnings: "Mastered component modularity, state management, accessibility (WCAG AA), responsive breakpoints (360px-1920px), and modern web performance optimizations.",
-    tech: ["React.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"],
-    category: "Frontend",
-    image: "/images/project-metrics.jpg",
-    gallery: [
-      "/images/project-metrics.jpg",
-      "/images/project-weather.jpg"
-    ],
-    live: "https://github.com/jampadurgalakshminarayana",
-    repo: "https://github.com/jampadurgalakshminarayana/portfolio",
-    featured: true
+    tech: ["React Native", "Expo", "Node.js", "Fastify", "TypeScript", "SQLite", "Drizzle ORM", "Zustand", "JWT"],
+    category: "Mobile + Backend",
+    image: "/images/project-vision.jpg",
+    gallery: ["/images/project-vision.jpg"],
+    live: undefined,
+    repo: undefined,
+    featured: true,
   },
   {
     id: 3,
-    slug: "todo-list-web-app",
-    title: "Interactive Task Management Web Application",
-    summary: "Responsive task management application with task creation, editing, deletion, filtering, and completion tracking using dynamic DOM manipulation.",
-    problem: "Users need a clutter-free, responsive tool to track daily deliverables with instant feedback and persistent task states.",
-    solution: "Built a lightweight, responsive web application featuring real-time DOM manipulation, task priority tags, and browser local storage persistence.",
+    slug: "developer-portfolio",
+    title: "Full-Stack Developer Portfolio",
+    summary: "Production-grade portfolio web application featuring a managed FastAPI backend, owner-only admin CMS, and automated testing.",
+    problem: "A software engineer needs an always-current, dynamic platform to demonstrate engineering depth across frontend, backend, databases, security, and automated tests.",
+    solution: "Built a responsive React 19 + TypeScript frontend backed by a FastAPI REST API with SQLAlchemy ORM, JWT-secured owner CMS, rate-limited inquiry handling, and containerized deployment.",
+    architecture: "Production-grade decoupled full-stack architecture: React 19 + TypeScript + Tailwind CSS v4 frontend paired with a FastAPI + SQLAlchemy 2.0 backend. Utilizes TanStack Query for server state caching with resilient offline fallback data, JWT authentication with rate-limited login, and Docker containerization.",
+    learnings: "Mastered strict type contracts between TypeScript and Pydantic v2 schemas, automated testing across Pytest and Vitest, WCAG AA accessibility, Docker Compose multi-service orchestrations, and owner-only admin CMS architecture.",
     features: [
-      "Dynamic task addition, in-place editing, deletion, and completion toggles",
-      "Filter tasks by active, completed, or prioritized states with instant DOM updates",
-      "Clean, accessible UI built with responsive CSS and keyboard navigation",
-      "Local storage synchronization for persistent task history between sessions"
+      "Responsive UI with dark/light WCAG AA theme system",
+      "Dynamic case studies with deep problem and architecture insights",
+      "Contact form with IP rate limiting and anti-spam honeypot",
+      "Owner-only admin CMS for content and image upload management",
+      "Global Command Palette (Ctrl+K) for rapid navigation",
+      "Full automated testing suite across backend and frontend"
     ],
-    architecture: "Event-driven client architecture leveraging vanilla JavaScript / React DOM manipulation, modular event listeners, and LocalStorage state persistence.",
-    learnings: "Deepened understanding of JavaScript Event Loop, DOM lifecycle events, state mutations, and creating responsive UI components with clean CSS3.",
-    tech: ["JavaScript", "HTML5", "CSS3", "DOM API"],
-    category: "Frontend",
-    image: "/images/project-weather.jpg",
-    gallery: [
-      "/images/project-weather.jpg",
-      "/images/project-vision.jpg"
-    ],
-    live: "https://github.com/jampadurgalakshminarayana",
-    repo: "https://github.com/jampadurgalakshminarayana/todo-list-app",
-    featured: true
+    tech: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "FastAPI", "Python", "SQLAlchemy", "PostgreSQL", "Docker", "JWT", "Vitest", "Pytest"],
+    category: "Full-Stack",
+    image: "/images/projects/developer-portfolio/hero.png",
+    gallery: ["/images/projects/developer-portfolio/hero.png"],
+    live: undefined,
+    repo: "https://github.com/J9d9l9n9-dev/portfolio",
+    featured: true,
   }
 ];
 

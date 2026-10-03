@@ -564,7 +564,7 @@ export const AdminDashboardPage: React.FC = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@example.com"
+                placeholder="jampadurgalakshminarayana@gmail.com"
                 className="w-full px-4 py-2.5 rounded-xl bg-bg-surface border border-border text-sm text-text-primary focus:outline-none focus:border-primary transition-colors"
               />
             </div>

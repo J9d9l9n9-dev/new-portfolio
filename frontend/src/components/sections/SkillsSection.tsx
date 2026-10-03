@@ -21,14 +21,16 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, learningIt
     return <Cpu className="w-5 h-5 text-primary" />;
   };
 
-  const getProficiency = (category: string) => {
+  const getCategoryTier = (category: string) => {
     const cat = category.toLowerCase();
-    if (cat.includes('program') || cat.includes('language')) return { label: 'Intermediate - Advanced', percent: 85 };
-    if (cat.includes('front')) return { label: 'Intermediate', percent: 82 };
-    if (cat.includes('back')) return { label: 'Intermediate', percent: 80 };
-    if (cat.includes('data')) return { label: 'Intermediate', percent: 80 };
-    if (cat.includes('ai') || cat.includes('ml')) return { label: 'Foundational - Intermediate', percent: 75 };
-    return null;
+    if (cat.includes('program') || cat.includes('language')) return { badge: 'Core Languages', tier: 'Intermediate' };
+    if (cat.includes('front')) return { badge: 'Web Architecture', tier: 'Intermediate' };
+    if (cat.includes('back')) return { badge: 'API & Services', tier: 'Intermediate' };
+    if (cat.includes('data')) return { badge: 'Relational & NoSQL', tier: 'Intermediate' };
+    if (cat.includes('ai') || cat.includes('ml')) return { badge: 'Vision & Deep Learning', tier: 'Foundational - Intermediate' };
+    if (cat.includes('fundamental') || cat.includes('core')) return { badge: 'Computer Science Core', tier: 'Academic Foundation' };
+    if (cat.includes('tool') || cat.includes('devops')) return { badge: 'Developer Toolchain', tier: 'Active Tooling' };
+    return { badge: 'Technical Domain', tier: 'Active' };
   };
 
   return (
@@ -60,7 +62,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, learningIt
               ? category.items
               : (category.chips || []);
 
-            const prof = getProficiency(category.category);
+            const tierInfo = getCategoryTier(category.category);
 
             return (
               <div
@@ -101,28 +103,13 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, learningIt
                   </div>
                 </div>
 
-                {/* Clean Proficiency Bar & Indicator (only for categories with levels) */}
-                {prof && !isChipsOnly && (
-                  <div className="pt-4 border-t border-border/50">
-                    <div className="flex items-center justify-between text-xs font-mono mb-2">
-                      <span className="text-text-muted">{prof.label}</span>
-                      <span className="text-primary font-semibold">{prof.percent}%</span>
-                    </div>
-                    {/* Progress bar */}
-                    <div className="w-full h-1.5 rounded-full bg-white/5 overflow-hidden">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-1000"
-                        style={{ width: `${prof.percent}%` }}
-                      />
-                    </div>
-                  </div>
-                )}
-                {isChipsOnly && (
-                  <div className="pt-4 border-t border-border/50 flex items-center justify-between text-xs font-mono text-text-muted">
-                    <span>{category.category.toLowerCase().includes('fundamental') ? 'Academic CS' : 'Developer Toolchain'}</span>
-                    <span className="text-[11px] text-text-muted/80">Foundational</span>
-                  </div>
-                )}
+                {/* Honest Proficiency Level Indicator */}
+                <div className="pt-4 border-t border-border/50 flex items-center justify-between text-xs font-mono">
+                  <span className="text-text-muted">{tierInfo.badge}</span>
+                  <span className="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-primary/10 text-primary border border-primary/20">
+                    {tierInfo.tier}
+                  </span>
+                </div>
               </div>
             );
           })}

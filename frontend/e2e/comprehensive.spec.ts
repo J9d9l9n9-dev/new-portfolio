@@ -58,7 +58,17 @@ test.describe('Comprehensive Verification Suite', () => {
     }
   });
 
-  test('5. Admin Inquiries List and Delete Message', async ({ page }) => {
+  test('5. Admin Inquiries List and Delete Message', async ({ page, request }) => {
+    // Ensure an inquiry exists in the database
+    await request.post('http://localhost:8000/api/v1/contact', {
+      data: {
+        name: 'Playwright Tester',
+        email: 'playwright.test@example.com',
+        subject: 'Playwright Automated Verification',
+        message: 'Validating end-to-end admin contact message display and deletion.'
+      }
+    });
+
     await page.goto('/admin');
     await page.fill('input[type="email"]', 'jampadurgalakshminarayana@gmail.com');
     await page.fill('input[type="password"]', 'AdminPass123!');
@@ -67,7 +77,7 @@ test.describe('Comprehensive Verification Suite', () => {
     await expect(page.getByText(/Admin Control Center/i)).toBeVisible();
 
     // Inquiries tab is active by default
-    await expect(page.getByText(/Playwright Tester/i)).toBeVisible();
+    await expect(page.getByText(/Playwright Tester/i).first()).toBeVisible();
 
     // Delete message
     page.on('dialog', async dialog => {

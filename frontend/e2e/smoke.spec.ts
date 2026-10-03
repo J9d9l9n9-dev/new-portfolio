@@ -36,12 +36,12 @@ test.describe('Portfolio Full-Stack Smoke Tests', () => {
   });
 
   test('2. Project Case Study: navigates to project case study and renders details', async ({ page }) => {
-    await page.goto('/projects/student-management-system');
+    await page.goto('/projects/ai-skin-intelligence');
 
     // Verify case study content
-    await expect(page.locator('h1')).toContainText(/Student Management System/i);
+    await expect(page.locator('h1')).toContainText(/AI Skin Intelligence/i);
     await expect(page.getByText(/The Problem & Motivation/i)).toBeVisible();
-    await expect(page.getByText(/Architecture & Solution Design/i)).toBeVisible();
+    await expect(page.getByText(/Solution Design & Implementation/i)).toBeVisible();
     await expect(page.getByText(/Core System Features/i)).toBeVisible();
 
     // Verify Back navigation
@@ -61,11 +61,11 @@ test.describe('Portfolio Full-Stack Smoke Tests', () => {
     await page.fill('#message', 'This is an automated smoke test validating end-to-end contact message persistence.');
 
     // Submit
-    const submitBtn = page.locator('button[type="submit"]:has-text("Transmit Message")');
+    const submitBtn = page.locator('button[type="submit"]');
     await submitBtn.click();
 
     // Verify success confirmation
-    await expect(page.getByText(/Message Transmitted!/i)).toBeVisible({ timeout: 10000 });
+    await expect(page.getByRole('heading', { name: /Message Sent Successfully!/i })).toBeVisible({ timeout: 10000 });
   });
 
   test('4. Admin Access Control: unauthenticated user cannot view admin dashboard', async ({ page }) => {

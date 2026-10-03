@@ -26,7 +26,7 @@ def check_rate_limit(client_ip: str):
         t for t in SUBMISSION_HISTORY[client_ip] if now - t < window
     ]
     
-    if len(SUBMISSION_HISTORY[client_ip]) >= 3:
+    if len(SUBMISSION_HISTORY[client_ip]) >= settings.CONTACT_RATE_LIMIT_MAX:
         raise HTTPException(
             status_code=status.HTTP_429_TOO_MANY_REQUESTS,
             detail=f"Rate limit exceeded. Please wait {settings.CONTACT_RATE_LIMIT_MINUTES} minutes before submitting another message."

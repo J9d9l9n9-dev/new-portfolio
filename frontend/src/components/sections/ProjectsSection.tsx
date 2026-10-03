@@ -35,28 +35,30 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
           </p>
           <div className="w-12 h-1 bg-gradient-to-r from-secondary to-primary rounded-full mt-3" />
 
-          {/* Category Filter Pills */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
-                  selectedCategory === cat
-                    ? 'bg-primary text-white shadow-md'
-                    : 'bg-bg-card border border-border text-text-secondary hover:text-text-primary hover:border-primary/40'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+          {/* Category Filter Pills (rendered dynamically only when more than 3 projects exist) */}
+          {projects.length > 3 && categories.length > 1 && (
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
+                    selectedCategory === cat
+                      ? 'bg-primary text-white shadow-md'
+                      : 'bg-bg-card border border-border text-text-secondary hover:text-text-primary hover:border-primary/40'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Projects Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => {
-            const imgSrc = project.image || '/images/project-planner.jpg';
+            const imgSrc = project.image || '/images/ai-skin-desktop.jpg';
             return (
               <div
                 key={project.slug}
@@ -71,7 +73,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/images/project-planner.jpg';
+                        (e.target as HTMLImageElement).src = '/images/ai-skin-desktop.jpg';
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-bg-card/90 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />

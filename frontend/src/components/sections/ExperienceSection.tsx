@@ -113,7 +113,9 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experience
                   </div>
 
                   <p className="text-sm text-text-secondary leading-relaxed">
-                    Rigorous curriculum covering data structures & algorithms, database systems architecture, operating systems, distributed architectures, software testing methodologies, and compiler design.
+                    {item.degree.toLowerCase().includes('mpc') || item.degree.toLowerCase().includes('intermediate')
+                      ? 'Core coursework in Advanced Mathematics (Calculus, Algebra, Analytical Geometry), Physics (Mechanics, Electromagnetism, Modern Physics), and Chemistry (Organic, Physical, Inorganic) with outstanding academic performance (93.9%).'
+                      : 'Comprehensive computer science curriculum covering Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, and Web Application Engineering.'}
                   </p>
                 </div>
               </div>

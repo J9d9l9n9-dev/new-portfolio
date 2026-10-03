@@ -79,3 +79,8 @@ def test_delete_project(client, auth_headers):
     # Verify deleted
     get_res = client.get("/api/v1/projects/test-project")
     assert get_res.status_code == 404
+
+def test_removed_project_slugs_return_404(client):
+    for removed_slug in ["currency-converter", "student-management-system", "attendance-management-system"]:
+        res = client.get(f"/api/v1/projects/{removed_slug}")
+        assert res.status_code == 404, f"Removed slug {removed_slug} should return 404 but got {res.status_code}"

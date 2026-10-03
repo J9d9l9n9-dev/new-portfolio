@@ -8,20 +8,21 @@
       "AI/ML Engineer",
       "Software Engineer"
     ],
-    "tagline": "Building practical software and AI solutions that solve real-world problems.",
-    "bio": "B.Tech Computer Science Engineering student focused on full-stack development, AI/ML, DSA, and practical software engineering. Experienced in building end-to-end applications using React, TypeScript, JavaScript, Python, FastAPI, Node.js, PostgreSQL, and modern AI/ML technologies. Interested in developing production-ready applications, participating in hackathons, and preparing for software engineering roles in product and MNC companies.",
+    "tagline": "Computer Science undergraduate at GITAM building scalable full-stack web applications and AI-driven software.",
+    "bio": "B.Tech Computer Science Engineering student focused on full-stack development, AI/ML, DSA, and practical software engineering. Experienced in building end-to-end applications using React, TypeScript, Python, FastAPI, Node.js, and PostgreSQL. Dedicated to building reliable, well-tested applications and preparing for software engineering roles.",
     "location": "Visakhapatnam, India",
     "email": "jampadurgalakshminarayana@gmail.com",
-    "availability": "Open to internships, hackathons, research opportunities, and software development opportunities",
+    "availability": "Available for Internships & Full-Stack Roles",
     "openToWork": true,
     "socials": {
       "github": "https://github.com/J9d9l9n9-dev",
-      "linkedin": "https://www.linkedin.com/in/durgalakshminarayanajampa/"
+      "linkedin": "https://www.linkedin.com/in/durgalakshminarayanajampa/",
+      "leetcode": "https://leetcode.com/u/J9d9l9n9/"
     },
     "stats": [
       { "label": "Featured Projects", "value": 3 },
-      { "label": "Hackathons", "value": 1 },
-      { "label": "Technologies", "value": 52 }
+      { "label": "SIH Hackathon", "value": 1 },
+      { "label": "DSA Solved", "value": 100 }
     ],
     "resumeUrl": "/resume.pdf",
     "heroImage": "/images/hero.jpg",
@@ -29,7 +30,7 @@
   },
   "settings": {
     "open_to_work": true,
-    "work_status_text": "Open to internships, hackathons, research opportunities, and software development opportunities",
+    "work_status_text": "Available for Internships & Full-Stack Roles",
     "resume_url": "/resume.pdf",
     "theme_default": "dark",
     "contact_email": "jampadurgalakshminarayana@gmail.com"
@@ -179,6 +180,8 @@
       "summary": "AI-powered skincare platform that analyzes skin characteristics and generates personalized skincare routines and recommendations.",
       "problem": "Generic skincare recommendations often fail to account for individual skin characteristics, concerns, lifestyle, environmental factors, allergies, and previous assessments.",
       "solution": "Built an AI-powered platform that combines skin image analysis, user profiles, health/lifestyle information, ingredient intelligence, and recommendation logic to generate personalized skincare routines.",
+      "architecture": "Dual-tier decoupled architecture: React 18 client communicating with a high-performance FastAPI backend. Image inference pipeline leverages PyTorch with an EfficientNet-B0 backbone for skin feature classification, coupled with SQLAlchemy 2.0 ORM, PostgreSQL persistence, and JWT-authenticated session control.",
+      "learnings": "Implemented computer vision inference pipelines in production, managed ML model weight loading in ASGI lifespans, designed structured relational schemas with Alembic migrations, and enforced fine-grained RBAC authorization.",
       "features": [
         "AI skin assessment",
         "Skin image upload",
@@ -228,6 +231,8 @@
       "summary": "Offline-first mobile EHR application helping ASHA workers manage patient records and healthcare visits in areas with unreliable connectivity.",
       "problem": "Healthcare workers in rural environments may need to collect and access patient information even when reliable internet connectivity is unavailable.",
       "solution": "Designed an offline-first mobile EHR system with local data storage and synchronization between the mobile application and backend server.",
+      "architecture": "Offline-first mobile architecture utilizing React Native (Expo) and local SQLite storage on device. Employs a bidirectional synchronization engine with Fastify backend, executing queued batch payloads, delta reconciliations, and timestamp conflict-resolution protocols.",
+      "learnings": "Deepened understanding of offline-first mobile state synchronization, network intermittent resilience, transactional SQLite migrations, and designing low-latency healthcare workflows for rural health workers.",
       "features": [
         "Patient management",
         "ASHA worker authentication",
@@ -257,8 +262,10 @@
       ],
       "category": "Mobile + Backend",
       "status": "Built for Smart India Hackathon (SIH)",
-      "image": "",
-      "gallery": [],
+      "image": "/images/project-vision.jpg",
+      "gallery": [
+        "/images/project-vision.jpg"
+      ],
       "live": null,
       "repo": null,
       "featured": true
@@ -269,14 +276,16 @@
       "summary": "This site: a modern full-stack portfolio with a managed backend and an owner-only admin dashboard, showcasing projects, skills, journey, and achievements.",
       "problem": "A developer needs a professional, always-current platform to present technical capability beyond a traditional resume, and a way to update it without redeploying code.",
       "solution": "Built a responsive React + TypeScript frontend backed by a FastAPI + PostgreSQL API, with JWT-secured owner-only admin for managing content, image uploads, and contact messages.",
+      "architecture": "Production-grade decoupled full-stack architecture: React 19 + TypeScript + Tailwind CSS v4 frontend paired with a FastAPI + SQLAlchemy 2.0 backend. Utilizes TanStack Query for server state caching with resilient offline fallback data, JWT authentication with rate-limited login, and Docker containerization.",
+      "learnings": "Mastered strict type contracts between TypeScript and Pydantic v2 schemas, automated testing across Pytest and Vitest, WCAG AA accessibility, Docker Compose multi-service orchestrations, and owner-only admin CMS architecture.",
       "features": [
         "Responsive modern UI with light/dark themes",
-        "Project case studies",
+        "Project case studies with problem and architecture breakdowns",
         "Skills and career journey timeline",
-        "Contact form with spam protection",
+        "Contact form with spam protection and rate limiting",
         "Owner-only admin dashboard (JWT, rate-limited login)",
-        "Content managed from the database",
-        "Command palette",
+        "Content managed dynamically from database",
+        "Command palette (Ctrl+K)",
         "Docker and CI pipeline",
         "Automated backend, frontend, and E2E tests"
       ],
@@ -295,11 +304,13 @@
         "Vitest"
       ],
       "category": "Full-Stack",
-      "status": "Deployment planned (Phase 3)",
-      "image": "",
-      "gallery": [],
+      "status": "Production-ready portfolio application",
+      "image": "/images/projects/developer-portfolio/hero.png",
+      "gallery": [
+        "/images/projects/developer-portfolio/hero.png"
+      ],
       "live": null,
-      "repo": null,
+      "repo": "https://github.com/J9d9l9n9-dev/portfolio",
       "featured": true
     }
   ],
@@ -331,16 +342,24 @@
   ],
   "education": [
     {
-      "school": "GITAM University, Visakhapatnam",
+      "school": "GITAM Deemed to be University, Visakhapatnam",
       "degree": "Bachelor of Technology, Computer Science Engineering",
-      "period": "2024 - 2028"
+      "period": "2024 - 2028 (Expected)"
+    },
+    {
+      "school": "Sasi Junior College, Mandapeta",
+      "degree": "Intermediate (MPC - Mathematics, Physics, Chemistry) - 93.9%",
+      "period": "2022 - 2024"
     }
   ],
   "achievements": [
     {
       "title": "Smart India Hackathon (SIH)",
+      "organization": "Smart India Hackathon",
       "description": "Worked on the ASHA EHR Companion problem, developing an offline-first healthcare solution targeting rural healthcare workflows.",
-      "url": null
+      "url": null,
+      "badge": "Hackathon",
+      "date": "2025"
     }
   ],
   "certifications": [],

@@ -1,8 +1,15 @@
 import os
-from typing import List
-from pydantic_settings import BaseSettings
+from typing import List, Union
+from pydantic import field_validator
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        case_sensitive=True,
+        env_file=".env",
+        extra="ignore"
+    )
+
     PROJECT_NAME: str = "Placement-Ready Engineering Portfolio API"
     VERSION: str = "2.0.0"
     API_V1_STR: str = "/api/v1"
@@ -18,12 +25,21 @@ class Settings(BaseSettings):
     
     # CORS
     FRONTEND_URL: str = os.getenv("FRONTEND_URL", "http://localhost:5173")
-    CORS_ORIGINS: List[str] = [
+    CORS_ORIGINS: Union[List[str], str] = [
         "http://localhost:5173",
         "http://localhost:3000",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:3000",
     ]
+
+    @field_validator("CORS_ORIGINS", mode="before")
+    @classmethod
+    def assemble_cors_origins(cls, v: Union[str, List[str]]) -> List[str]:
+        if isinstance(v, str) and not v.startswith("["):
+            return [i.strip() for i in v.split(",") if i.strip()]
+        elif isinstance(v, list):
+            return v
+        return v
     
     # Admin Owner Setup (Created ONLY from env vars at startup, no credentials in code)
     ADMIN_EMAIL: str = os.getenv("ADMIN_EMAIL", "owner@portfolio.local")
@@ -49,6 +65,7 @@ class Settings(BaseSettings):
     MAX_FAILED_LOGIN_ATTEMPTS: int = 5
     LOGIN_LOCKOUT_MINUTES: int = 15
     CONTACT_RATE_LIMIT_MINUTES: int = 5
+    CONTACT_RATE_LIMIT_MAX: int = 10
     
     # SMTP Notification (Optional)
     SMTP_HOST: str = os.getenv("SMTP_HOST", "")
@@ -56,9 +73,5 @@ class Settings(BaseSettings):
     SMTP_USER: str = os.getenv("SMTP_USER", "")
     SMTP_PASSWORD: str = os.getenv("SMTP_PASSWORD", "")
     NOTIFY_EMAIL: str = os.getenv("NOTIFY_EMAIL", "")
-
-    class Config:
-        case_sensitive = True
-        env_file = ".env"
 
 settings = Settings()

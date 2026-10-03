@@ -64,11 +64,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
     try {
       await submitContact(formData);
       setIsSuccess(true);
-      showToast('Message transmitted successfully to inbox!', 'success');
+      showToast('Message sent successfully! Thank you for reaching out.', 'success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setErrors({});
     } catch (err: any) {
-      const msg = err.message || 'Failed to transmit message. Please try again.';
+      const msg = err.message || 'Failed to send message. Please try again.';
       setServerError(msg);
       showToast(msg, 'error');
     } finally {
@@ -189,7 +189,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="font-display font-bold text-2xl text-text-primary">
-                    Message Transmitted!
+                    Message Sent Successfully!
                   </h3>
                   <p className="mt-2 text-text-secondary text-sm max-w-sm leading-relaxed">
                     Thank you for reaching out. Your inquiry has been logged in the backend and I will review it promptly.
@@ -227,6 +227,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
                     <div className="relative">
                       <input
                         id="name"
+                        name="name"
                         type="text"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -253,6 +254,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
                     <div className="relative">
                       <input
                         id="email"
+                        name="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -280,6 +282,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
                   <div className="relative">
                     <input
                       id="subject"
+                      name="subject"
                       type="text"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -306,6 +309,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
                   <div className="relative">
                     <textarea
                       id="message"
+                      name="message"
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -337,12 +341,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin" />
-                        <span>Transmitting to Server...</span>
+                        <span>Sending Message...</span>
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        <span>Transmit Message</span>
+                        <span>Send Message</span>
                       </>
                     )}
                   </button>
